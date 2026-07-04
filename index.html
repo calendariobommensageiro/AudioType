@@ -162,6 +162,52 @@
             text-transform: uppercase;
         }
 
+        /* Área de Transcrição Interativa */
+        .workspace-section {
+            background: #fafbfc;
+            border: 1px dashed #00b4d8;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 25px;
+        }
+
+        .audio-player-wrapper {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .transcription-textarea {
+            width: 100%;
+            height: 150px;
+            padding: 15px;
+            border: 2px solid #dcdfe4;
+            border-radius: 12px;
+            font-size: 16px;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.2s;
+            margin-bottom: 15px;
+        }
+
+        .transcription-textarea:focus {
+            border-color: #0077b6;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .result-success { background-color: #e8f8f0; color: #1e7e34; border: 1px solid #c3e6cb; }
+
         .portal-footer {
             text-align: center;
             margin-top: 30px;
@@ -178,9 +224,7 @@
 
         .portal-footer a:hover { text-decoration: underline; }
 
-        /* ==========================================
-           BARRA DE COOKIES - IDENTIDADE AUDIOTYPE 
-           ========================================== */
+        /* BARRA DE COOKIES */
         .cookie-banner {
             position: fixed;
             bottom: 0;
@@ -190,7 +234,7 @@
             color: #ffffff;
             padding: 20px 40px;
             z-index: 99999;
-            box-shadow: 0 -8px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.2);
             display: flex;
             justify-content: center;
         }
@@ -213,7 +257,7 @@
 
         .cookie-text p {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.9);
+            color: #ffffff;
             line-height: 1.5;
         }
 
@@ -223,17 +267,17 @@
             flex-shrink: 0;
         }
 
-        /* Botões Arredondados com a Identidade do Portal */
         .btn-cookie-opt {
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: #ffffff;
+            color: #003366;
+            border: none;
             padding: 12px 24px;
             border-radius: 12px; 
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 14px;
             transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .btn-cookie-accept {
@@ -245,13 +289,12 @@
             cursor: pointer;
             font-weight: 700;
             font-size: 14px;
-            transition: opacity 0.2s, transform 0.1s;
-            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
         }
 
-        .btn-cookie-opt:hover { background: rgba(255, 255, 255, 0.25); }
-        .btn-cookie-accept:hover { opacity: 0.95; }
-        .btn-cookie-opt:active, .btn-cookie-accept:active { transform: scale(0.98); }
+        .btn-cookie-opt:hover { background: #eef2f7; }
+        .btn-cookie-accept:hover { background-color: #27ae60; }
 
         @media (max-width: 768px) {
             .cards-container, .filter-section { grid-template-columns: 1fr; }
@@ -266,7 +309,7 @@
 
     <div class="portal-container">
         
-        <!-- Cabeçalho Definitivo com Logo Transparente -->
+        <!-- Cabeçalho Definitivo -->
         <header class="portal-header">
             <div class="logo-wrapper">
                 <img src="logoaudiotype.png" alt="AudioType - O som que vira texto" class="logo-img" id="realLogo" style="max-width: 280px; height: auto;" onerror="this.style.display='none'; document.getElementById('fallbackText').style.display='block';">
@@ -291,7 +334,8 @@
                     <div class="card-tag-livre">Nível Livre</div>
                     <div class="card-title">Ditado para Iniciantes</div>
                 </div>
-                <button class="btn-action btn-green">▶ Começar Treino Grátis</button>
+                <!-- Chamar a função de abrir o exercício -->
+                <button class="btn-action btn-green" onclick="abrirTreinoGratis()">▶ Começar Treino Grátis</button>
             </div>
 
             <div class="exercise-card">
@@ -299,12 +343,32 @@
                     <div class="card-tag-premium">Premium</div>
                     <div class="card-title">Selo de Proficiência</div>
                 </div>
-                <button class="btn-action btn-blue">🔒 Emitir Certificado Pró</button>
+                <!-- Link de checkout de vendas fictício (Substitua depois pelo seu link Hotmart/Kiwify) -->
+                <button class="btn-action btn-blue" onclick="window.open('https://hotmart.com', '_blank')">🔒 Emitir Certificado Pró</button>
             </div>
         </div>
 
+        <!-- Área de Transcrição Interativa (Fica oculta até clicar no botão) -->
+        <div class="workspace-section" id="workspaceTreino" style="display: none;">
+            <h3 style="color: #0b1a30; margin-bottom: 15px;">🎧 Exercício: Ditado para Iniciantes</h3>
+            
+            <div class="audio-player-wrapper">
+                <!-- Arquivo de áudio. Substitua 'audio-demonstracao.mp3' pelo nome do seu arquivo real -->
+                <audio id="treinoAudio" controls controlsList="nodownload">
+                    <source src="audio-demonstracao.mp3" type="audio/mpeg">
+                    Seu navegador não suporta o player de áudio.
+                </audio>
+            </div>
+
+            <textarea id="userTranscription" class="transcription-textarea" placeholder="Ouça o áudio acima com atenção e digite aqui exatamente o que for dito..."></textarea>
+            
+            <button class="btn-action btn-blue" onclick="verificarTranscricao()">✔ Verificar Resultado</button>
+            
+            <div id="resultadoValidacao" class="result-box result-success"></div>
+        </div>
+
         <!-- Linha de Filtros -->
-        <div class="filter-section">
+        <div class="filter-section" id="secaoFiltros">
             <select class="select-custom"><option>[ Selecionar Nível / Velocidade ]</option></select>
             <select class="select-custom"><option>[ Tipo de Áudio / Contexto ]</option></select>
             <button class="btn-filter">Filtrar</button>
@@ -322,6 +386,38 @@
     <div id="cookieContainer"></div>
 
     <script>
+        // Texto original correto que o aluno deve acertar (Mude quando trocar o áudio)
+        const textoCorreto = "o som que vira texto";
+
+        function abrirTreinoGratis() {
+            // Mostra o painel de treino e rola até ele
+            var workspace = document.getElementById('workspaceTreino');
+            workspace.style.display = 'block';
+            workspace.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function verificarTranscricao() {
+            var userInput = document.getElementById('userTranscription').value.trim().toLowerCase();
+            var resultadoDiv = document.getElementById('resultadoValidacao');
+            
+            // Limpa pontuações simples para comparar puramente as palavras
+            var textoLimpoUsuario = userInput.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+            var textoLimpoAlvo = textoCorreto.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+
+            if (textoLimpoUsuario === textoLimpoAlvo) {
+                resultadoDiv.className = "result-box result-success";
+                resultadoDiv.innerHTML = "🎉 Excelente! Você transcreveu 100% corretamente.";
+                resultadoDiv.style.display = "block";
+            } else {
+                resultadoDiv.className = "result-box";
+                resultadoDiv.style.backgroundColor = "#fff3cd";
+                resultadoDiv.style.color = "#856404";
+                resultadoDiv.style.border = "1px solid #ffeeba";
+                resultadoDiv.innerHTML = "⚠️ Quase lá! Dica: Ouça novamente e confira a grafia e espaços.";
+                resultadoDiv.style.display = "block";
+            }
+        }
+
         function carregarCookies() {
             if(localStorage.getItem('cookiesAceitos') === 'true') return;
             fetch('cookies.html')
