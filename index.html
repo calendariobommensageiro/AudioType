@@ -17,10 +17,9 @@
             color: #333333;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px 80px 20px; /* Espaço extra no fundo para o banner não cobrir nada */
+            padding: 40px 20px 80px 20px;
         }
 
         .portal-container {
@@ -33,6 +32,7 @@
             border: 1px solid #eef0f3;
         }
 
+        /* Topo com suporte para a logo incorporada */
         .portal-header {
             text-align: center;
             margin-bottom: 30px;
@@ -44,10 +44,9 @@
             justify-content: center;
         }
 
-        .logo-img {
-            max-width: 260px;
+        .logo-container svg {
+            max-width: 280px;
             height: auto;
-            margin-bottom: 5px;
         }
 
         .main-banner {
@@ -56,7 +55,6 @@
             padding: 35px 25px;
             border-radius: 16px;
             margin-bottom: 25px;
-            position: relative;
         }
 
         .banner-tag {
@@ -94,21 +92,8 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
 
-        .card-tag-livre {
-            color: #00a8cc;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .card-tag-premium {
-            color: #006699;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
+        .card-tag-livre { color: #00a8cc; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+        .card-tag-premium { color: #006699; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
 
         .card-title {
             font-size: 18px;
@@ -132,19 +117,9 @@
             transition: opacity 0.2s;
         }
 
-        .btn-green {
-            background-color: #2ecc71;
-            color: white;
-        }
-
-        .btn-blue {
-            background-color: #0077b6;
-            color: white;
-        }
-
-        .btn-action:hover {
-            opacity: 0.9;
-        }
+        .btn-green { background-color: #2ecc71; color: white; }
+        .btn-blue { background-color: #0077b6; color: white; }
+        .btn-action:hover { opacity: 0.9; }
 
         .filter-section {
             display: grid;
@@ -176,7 +151,6 @@
             text-transform: uppercase;
         }
 
-        /* Rodapé com Políticas de Privacidade */
         .portal-footer {
             text-align: center;
             margin-top: 30px;
@@ -191,47 +165,10 @@
             margin: 0 10px;
         }
 
-        .portal-footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Barra de Consentimento de Cookies Ativa no Fundo */
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #1a202c;
-            color: #ffffff;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            font-size: 14px;
-            z-index: 9999;
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
-        }
-
-        .btn-cookie {
-            background-color: #2ecc71;
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+        .portal-footer a:hover { text-decoration: underline; }
 
         @media (max-width: 768px) {
-            .cards-container, .filter-section {
-                grid-template-columns: 1fr;
-            }
-            .cookie-banner {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
+            .cards-container, .filter-section { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -239,22 +176,30 @@
 
     <div class="portal-container">
         
-        <!-- Cabeçalho com o Logo Oficial -->
         <header class="portal-header">
-            <img src="logo.png" alt="AudioType Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('fallback-text').style.display='block';">
-            <div id="fallback-text" style="display:none; font-size: 32px; font-weight: bold; color: #003366;">
-                Audio<span style="color: #00a8cc;">Type</span>
+            <div class="logo-container">
+                <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1a0033;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00b4d8;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M40 50 C40 25, 75 25, 75 50" fill="none" stroke="url(#logo-grad)" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M35 45 H45 V55 H35 Z" fill="url(#logo-grad)"/>
+                    <path d="M70 45 H80 V55 H70 Z" fill="url(#logo-grad)"/>
+                    <path d="M15 50 Q 25 50, 28 40 T 34 60 T 40 50 H 55" fill="none" stroke="#1a0033" stroke-width="3" stroke-linecap="round"/>
+                    <text x="95" y="48" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="800" fill="#1a1a3a">Audio<tspan fill="#00b4d8">Type</tspan></text>
+                    <text x="95" y="65" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#6c757d" letter-spacing="1.5">O SOM QUE VIRA TEXTO.</text>
+                </svg>
             </div>
-            <p style="color: #6c757d; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px;">O som que vira texto</p>
         </header>
 
-        <!-- Banner Principal -->
         <div class="main-banner">
             <span class="banner-tag">Treino Sugerido</span>
             <div class="banner-title">Resumo de Negócios (PT-BR)</div>
         </div>
 
-        <!-- Seção de Cards Horizontais (Lado a Lado) -->
         <div class="cards-container">
             <div class="exercise-card">
                 <div>
@@ -273,47 +218,41 @@
             </div>
         </div>
 
-        <!-- Linha de Filtros -->
         <div class="filter-section">
-            <select class="select-custom">
-                <option>[ Selecionar Nível / Velocidade ]</option>
-            </select>
-            
-            <select class="select-custom">
-                <option>[ Tipo de Áudio / Contexto ]</option>
-            </select>
-
+            <select class="select-custom"><option>[ Selecionar Nível / Velocidade ]</option></select>
+            <select class="select-custom"><option>[ Tipo de Áudio / Contexto ]</option></select>
             <button class="btn-filter">Filtrar</button>
         </div>
 
-        <!-- Links de Políticas Legais no Rodapé -->
         <footer class="portal-footer">
-            <a href="#">Política de Privacidade</a> | 
-            <a href="#">Termos de Uso</a>
+            <a href="politicas.html#privacidade">Política de Privacidade</a> | 
+            <a href="politicas.html#termos">Termos de Uso</a>
         </footer>
 
     </div>
 
-    <!-- Banner de Cookies -->
-    <div class="cookie-banner" id="cookieBanner">
-        <span>Nós utilizamos cookies e tecnologias semelhantes para melhorar a sua experiência de treino no AudioType.</span>
-        <button class="btn-cookie" onclick="aceitarCookies()">Aceitar</button>
-    </div>
+    <div id="cookieContainer"></div>
 
     <script>
-        // Função simples para fechar a barra de cookies ao clicar em aceitar
+        function carregarCookies() {
+            if(localStorage.getItem('cookiesAceitos') === 'true') return;
+            fetch('cookies.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('cookieContainer').innerHTML = data;
+                }).catch(err => {
+                    // Fallback caso o arquivo demore para responder
+                    console.log("Carregando cookies modulares...");
+                });
+        }
+
         function aceitarCookies() {
-            document.getElementById('cookieBanner').style.display = 'none';
             localStorage.setItem('cookiesAceitos', 'true');
+            var banner = document.getElementById('cookieBanner');
+            if(banner) banner.style.display = 'none';
         }
 
-        // Verifica se o usuário já aceitou antes para não mostrar de novo
-        window.onload = function() {
-            if(localStorage.getItem('cookiesAceitos') === 'true') {
-                document.getElementById('cookieBanner').style.display = 'none';
-            }
-        }
+        window.onload = carregarCookies;
     </script>
-
 </body>
 </html>
