@@ -178,8 +178,87 @@
 
         .portal-footer a:hover { text-decoration: underline; }
 
+        /* ==========================================
+           BARRA DE COOKIES - IDENTIDADE AUDIOTYPE 
+           ========================================== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #003366 0%, #00a8cc 100%); 
+            color: #ffffff;
+            padding: 20px 40px;
+            z-index: 99999;
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: center;
+        }
+
+        .cookie-content {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .cookie-text strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .cookie-text p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Botões Arredondados com a Identidade do Portal */
+        .btn-cookie-opt {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 12px 24px;
+            border-radius: 12px; 
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn-cookie-accept {
+            background-color: #2ecc71;
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 12px; 
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            transition: opacity 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn-cookie-opt:hover { background: rgba(255, 255, 255, 0.25); }
+        .btn-cookie-accept:hover { opacity: 0.95; }
+        .btn-cookie-opt:active, .btn-cookie-accept:active { transform: scale(0.98); }
+
         @media (max-width: 768px) {
             .cards-container, .filter-section { grid-template-columns: 1fr; }
+            .cookie-banner { padding: 20px; }
+            .cookie-content { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .cookie-buttons { width: 100%; flex-direction: column; gap: 10px; }
+            .btn-cookie-opt, .btn-cookie-accept { width: 100%; text-align: center; padding: 14px; }
         }
     </style>
 </head>
@@ -187,9 +266,8 @@
 
     <div class="portal-container">
         
-        <!-- Cabeçalho Seguro -->
-       <!-- Cabeçalho Definitivo com Logo Transparente -->
-       <header class="portal-header">
+        <!-- Cabeçalho Definitivo com Logo Transparente -->
+        <header class="portal-header">
             <div class="logo-wrapper">
                 <img src="logoaudiotype.png" alt="AudioType - O som que vira texto" class="logo-img" id="realLogo" style="max-width: 280px; height: auto;" onerror="this.style.display='none'; document.getElementById('fallbackText').style.display='block';">
                 
