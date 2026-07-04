@@ -32,7 +32,7 @@
             border: 1px solid #eef0f3;
         }
 
-        /* Topo com suporte para a logo incorporada */
+        /* Topo Organizado */
         .portal-header {
             text-align: center;
             margin-bottom: 30px;
@@ -44,9 +44,20 @@
             justify-content: center;
         }
 
-        .logo-container svg {
+        .logo-img {
             max-width: 280px;
             height: auto;
+            margin-bottom: 10px;
+        }
+
+        .text-logo {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0b1a30;
+        }
+
+        .text-logo span {
+            color: #00b4d8;
         }
 
         .main-banner {
@@ -176,30 +187,22 @@
 
     <div class="portal-container">
         
+        <!-- Cabeçalho Seguro -->
         <header class="portal-header">
-            <div class="logo-container">
-                <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#1a0033;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#00b4d8;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <path d="M40 50 C40 25, 75 25, 75 50" fill="none" stroke="url(#logo-grad)" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M35 45 H45 V55 H35 Z" fill="url(#logo-grad)"/>
-                    <path d="M70 45 H80 V55 H70 Z" fill="url(#logo-grad)"/>
-                    <path d="M15 50 Q 25 50, 28 40 T 34 60 T 40 50 H 55" fill="none" stroke="#1a0033" stroke-width="3" stroke-linecap="round"/>
-                    <text x="95" y="48" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="800" fill="#1a1a3a">Audio<tspan fill="#00b4d8">Type</tspan></text>
-                    <text x="95" y="65" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#6c757d" letter-spacing="1.5">O SOM QUE VIRA TEXTO.</text>
-                </svg>
-            </div>
+            <!-- Tenta carregar a imagem 'logo.png'. Se não achar, mantém o texto sem sumir com nada -->
+            <img src="logo.png" alt="AudioType" class="logo-img" onerror="this.style.display='none';">
+            
+            <div class="text-logo">Audio<span>Type</span></div>
+            <p style="color: #6c757d; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px;">O som que vira texto</p>
         </header>
 
+        <!-- Banner Principal -->
         <div class="main-banner">
             <span class="banner-tag">Treino Sugerido</span>
             <div class="banner-title">Resumo de Negócios (PT-BR)</div>
         </div>
 
+        <!-- Cards Horizontais -->
         <div class="cards-container">
             <div class="exercise-card">
                 <div>
@@ -218,12 +221,14 @@
             </div>
         </div>
 
+        <!-- Linha de Filtros -->
         <div class="filter-section">
             <select class="select-custom"><option>[ Selecionar Nível / Velocidade ]</option></select>
             <select class="select-custom"><option>[ Tipo de Áudio / Contexto ]</option></select>
             <button class="btn-filter">Filtrar</button>
         </div>
 
+        <!-- Links para políticas -->
         <footer class="portal-footer">
             <a href="politicas.html#privacidade">Política de Privacidade</a> | 
             <a href="politicas.html#termos">Termos de Uso</a>
@@ -231,6 +236,7 @@
 
     </div>
 
+    <!-- Container da barra de cookies -->
     <div id="cookieContainer"></div>
 
     <script>
@@ -240,10 +246,7 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('cookieContainer').innerHTML = data;
-                }).catch(err => {
-                    // Fallback caso o arquivo demore para responder
-                    console.log("Carregando cookies modulares...");
-                });
+                }).catch(err => console.log("Carregando cookies..."));
         }
 
         function aceitarCookies() {
