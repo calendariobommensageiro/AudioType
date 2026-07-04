@@ -21,7 +21,7 @@
             padding: 20px;
         }
 
-        /* Container Principal (Estilo Smartphone/Tablet) */
+        /* Container Principal baseado no modelo da imagem */
         .app-container {
             background-color: #ffffff;
             width: 100%;
@@ -32,7 +32,7 @@
             border: 1px solid #eef0f3;
         }
 
-        /* Topo com a Logo */
+        /* Identidade Visual do Topo */
         .header-logo {
             text-align: center;
             margin-bottom: 25px;
@@ -55,7 +55,7 @@
             letter-spacing: 1px;
         }
 
-        /* Bloco de Destaque (Superior Laranja/Roxo) */
+        /* Bloco Superior (Adaptado do bloco Laranja original) */
         .main-banner {
             background: linear-gradient(135deg, #4a00e0, #1a1a2e);
             color: #ffffff;
@@ -80,7 +80,7 @@
             font-weight: 600;
         }
 
-        /* Estilo dos Cards de Ação */
+        /* Estilo dos Cards de Ação com borda lateral idêntica à referência */
         .action-card {
             background-color: #ffffff;
             border: 2px solid #eef0f3;
@@ -91,7 +91,6 @@
             overflow: hidden;
         }
 
-        /* Borda lateral colorida idêntica à imagem de referência */
         .action-card::before {
             content: '';
             position: absolute;
@@ -102,6 +101,7 @@
             border-radius: 0 4px 4px 0;
         }
 
+        /* Cores das bordas laterais dos cards */
         .card-free::before { background-color: #4a00e0; }
         .card-pro::before { background-color: #00d2ff; }
 
@@ -116,7 +116,7 @@
             margin-bottom: 12px;
         }
 
-        /* Botões Verdes de Ação */
+        /* Botões Verdes de Ação Direta */
         .btn-action {
             display: flex;
             align-items: center;
@@ -146,7 +146,7 @@
             margin: 25px 0;
         }
 
-        /* Área de Filtros e Seleção */
+        /* Grid de Seletores Inferiores */
         .filter-section {
             display: grid;
             grid-template-columns: 1fr;
@@ -186,7 +186,7 @@
             background-color: #2d2d4d;
         }
 
-        /* Alerta de Ajuda Azul do Rodapé */
+        /* Faixa de Alerta Azul do Rodapé */
         .info-alert {
             background-color: #e3f2fd;
             border-radius: 12px;
@@ -206,19 +206,19 @@
 
     <div class="app-container">
         
-        <!-- Logo -->
+        <!-- Identificação -->
         <div class="header-logo">
             <h1>Audio<span>Type</span></h1>
             <p>O SOM QUE VIRA TEXTO</p>
         </div>
 
-        <!-- Banner Principal -->
+        <!-- Bloco de Destaque -->
         <div class="main-banner">
             <div class="banner-label">Treino do Dia</div>
             <div class="banner-title">Resumo de Negócios (PT-BR)</div>
         </div>
 
-        <!-- Card 1: Grátis -->
+        <!-- Card 1 -->
         <div class="action-card card-free">
             <span class="card-tag">NÍVEL 1</span>
             <button class="btn-action" onclick="alert('Iniciando player de áudio para treino...')">
@@ -226,18 +226,18 @@
             </button>
         </div>
 
-        <!-- Card 2: Pro -->
+        <!-- Card 2 -->
         <div class="action-card card-pro">
             <span class="card-tag">PRO</span>
-            <button class="btn-action" onclick="alert('Direcionando para a área de assinatura do Certificado...')">
+            <button class="btn-action" onclick="alert('Direcionando para a área do Certificado...')">
                 🔒 Emitir Certificado Pró
             </button>
         </div>
 
-        <!-- Linha Tracejada -->
+        <!-- Divisor -->
         <hr class="divider">
 
-        <!-- Seção de Filtros -->
+        <!-- Seletores de Filtro -->
         <div class="filter-section">
             <select class="select-custom">
                 <option value="">[ Nível / Velocidade ]</option>
@@ -256,7 +256,7 @@
             <button class="btn-filter" onclick="alert('Filtrando áudios disponíveis...')">Filtrar</button>
         </div>
 
-        <!-- Banner Informativo Azul -->
+        <!-- Rodapé Informativo -->
         <div class="info-alert">
             📌 Quer um áudio específico para praticar? Clique para o buscador completo.
         </div>
