@@ -17,11 +17,6 @@
         .portal-header { text-align: center; margin-bottom: 30px; }
         .logo-img { max-width: 280px; height: auto; }
         
-        /* Seção Propósito */
-        .propósito-section { background-color: #fafbfc; border-left: 4px solid #00a8cc; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: left; }
-        .propósito-section h2 { color: #0b1a30; font-size: 18px; margin-bottom: 6px; }
-        .propósito-section p { color: #495057; font-size: 14px; line-height: 1.6; }
-
         .main-banner { background: linear-gradient(135deg, #003366 0%, #00a8cc 100%); color: #ffffff; padding: 35px 25px; border-radius: 16px; margin-bottom: 25px; }
         .banner-title { font-size: 24px; font-weight: 700; }
 
@@ -39,20 +34,37 @@
 <body>
 
     <div class="portal-container">
+        <!-- Menu Institucional -->
         <nav class="nav-menu">
-            <a href="#">Sobre</a>
-            <a href="#">Propósito</a>
-            <a href="#">Como Funciona</a>
-            <a href="#">Oportunidades</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#proposito">Propósito</a>
+            <a href="#como-funciona">Como Funciona</a>
+            <a href="#oportunidades">Oportunidades</a>
         </nav>
 
         <header class="portal-header">
             <img src="logoaudiotype.png" alt="AudioType" class="logo-img">
         </header>
 
-        <section class="propósito-section">
-            <h2>Propósito</h2>
-            <p>O AudioType disponibiliza ferramentas para o aprimoramento da transcrição ágil. Nosso propósito é oferecer um ambiente estruturado para que o usuário explore suas habilidades e identifique caminhos nos mercados de tecnologia, legendagem e assistência virtual.</p>
+        <!-- Seções de Conteúdo -->
+        <section id="sobre" style="margin-bottom: 20px; padding: 10px;">
+            <h2 style="color: #0b1a30; font-size: 18px; margin-bottom: 5px;">Sobre</h2>
+            <p style="color: #495057; font-size: 14px;">O AudioType é uma plataforma independente dedicada a fornecer recursos de transcrição ágil, estruturada para otimizar o tempo e a precisão do usuário.</p>
+        </section>
+
+        <section id="proposito" style="background-color: #fafbfc; border-left: 4px solid #00a8cc; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+            <h2 style="color: #0b1a30; font-size: 18px; margin-bottom: 6px;">Propósito</h2>
+            <p style="color: #495057; font-size: 14px;">O AudioType disponibiliza ferramentas para o aprimoramento da transcrição ágil. Nosso propósito é oferecer um ambiente estruturado para que o usuário explore suas habilidades e identifique caminhos nos mercados de tecnologia, legendagem e assistência virtual.</p>
+        </section>
+
+        <section id="como-funciona" style="margin-bottom: 20px; padding: 10px;">
+            <h2 style="color: #0b1a30; font-size: 18px; margin-bottom: 5px;">Como Funciona</h2>
+            <p style="color: #495057; font-size: 14px;">Escolha o idioma e o nível desejado no menu de filtros, ouça os áudios selecionados e pratique a transcrição em tempo real com nosso validador automático.</p>
+        </section>
+
+        <section id="oportunidades" style="margin-bottom: 20px; padding: 10px;">
+            <h2 style="color: #0b1a30; font-size: 18px; margin-bottom: 5px;">Oportunidades</h2>
+            <p style="color: #495057; font-size: 14px;">Ao dominar a transcrição, você amplia suas competências para atuar como freelancer em plataformas globais, legendagem de vídeos ou assistência remota especializada.</p>
         </section>
 
         <div class="main-banner">
