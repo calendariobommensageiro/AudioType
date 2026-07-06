@@ -16,9 +16,11 @@
         .portal-header { text-align: center; margin-bottom: 30px; }
         .logo-img { max-width: 280px; height: auto; }
         
-        .propósito-section { background-color: #fafbfc; border-left: 4px solid #00a8cc; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: left; }
+        /* Seções de Texto */
+        .content-section { display: none; margin-bottom: 30px; padding: 20px; background: #fafbfc; border-radius: 12px; border-left: 4px solid #00a8cc; }
+        .content-section:target { display: block; }
+        .propósito-fixo { background-color: #fafbfc; border-left: 4px solid #00a8cc; padding: 20px; border-radius: 12px; margin-bottom: 30px; }
         
-        /* EFEITO BRILHO ANIME NO BANNER */
         @keyframes brilho-raio {
             0% { box-shadow: 0 0 10px #00a8cc; }
             50% { box-shadow: 0 0 25px #00a8cc, 0 0 40px #ffffff; }
@@ -42,19 +44,26 @@
 
     <div class="portal-container">
         <nav class="nav-menu">
-            <a href="#">Sobre</a>
-            <a href="#">Propósito</a>
-            <a href="#">Como Funciona</a>
-            <a href="#">Oportunidades</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#proposito">Propósito</a>
+            <a href="#como-funciona">Como Funciona</a>
+            <a href="#oportunidades">Oportunidades</a>
         </nav>
 
         <header class="portal-header">
             <img src="logoaudiotype.png" alt="AudioType" class="logo-img">
         </header>
 
-        <section class="propósito-section">
+        <!-- Seções clicáveis -->
+        <section id="sobre" class="content-section"><h2>Sobre</h2><p>O AudioType é uma plataforma independente dedicada a fornecer recursos de transcrição ágil, estruturada para otimizar o tempo do usuário.</p></section>
+        <section id="proposito" class="content-section"><h2>Propósito</h2><p>O AudioType disponibiliza ferramentas para o aprimoramento da transcrição ágil, focando em mercados de tecnologia e legendagem.</p></section>
+        <section id="como-funciona" class="content-section"><h2>Como Funciona</h2><p>Escolha o idioma, ouça os áudios e pratique a transcrição em tempo real com nosso validador.</p></section>
+        <section id="oportunidades" class="content-section"><h2>Oportunidades</h2><p>Domine a transcrição para atuar como freelancer em plataformas globais e assistência remota.</p></section>
+
+        <!-- Texto base que sempre aparece -->
+        <section class="propósito-fixo">
             <h2>Propósito</h2>
-            <p>O AudioType disponibiliza ferramentas para o aprimoramento da transcrição ágil. Nosso propósito é oferecer um ambiente estruturado para que o usuário explore suas habilidades e identifique caminhos nos mercados de tecnologia, legendagem e assistência virtual.</p>
+            <p>O AudioType disponibiliza ferramentas para o aprimoramento da transcrição ágil. Nosso propósito é oferecer um ambiente estruturado para que o usuário explore suas habilidades.</p>
         </section>
 
         <div class="main-banner">
@@ -73,17 +82,8 @@
         </div>
 
         <div class="filter-section">
-            <select class="select-custom">
-                <option>Português - Iniciante</option>
-                <option>Português - Profissional</option>
-                <option>Inglês - Iniciante</option>
-                <option>Inglês - Profissional</option>
-            </select>
-            <select class="select-custom">
-                <option>Negócios & Corporativo</option>
-                <option>Jurídico & Documentação</option>
-                <option>Entrevistas & Podcasts</option>
-            </select>
+            <select class="select-custom"><option>Português - Iniciante</option><option>Português - Profissional</option><option>Inglês - Iniciante</option><option>Inglês - Profissional</option></select>
+            <select class="select-custom"><option>Negócios & Corporativo</option><option>Jurídico & Documentação</option><option>Entrevistas & Podcasts</option></select>
             <button class="btn-filter">Filtrar</button>
         </div>
     </div>
