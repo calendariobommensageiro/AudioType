@@ -2,36 +2,39 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>AudioType - Treino</title>
     <style>
-        body { background-color: #f5f6f8; padding: 40px; display: flex; justify-content: center; }
-        .portal-container { background: #ffffff; width: 100%; max-width: 850px; border-radius: 24px; padding: 40px; }
-
-        /* O EFEITO DE RAIO/BRILHO QUE VOCÊ GOSTA */
-        @keyframes brilho-raio {
-            0% { box-shadow: 0 0 10px #00a8cc; }
-            50% { box-shadow: 0 0 25px #00a8cc, 0 0 40px #ffffff; }
-            100% { box-shadow: 0 0 10px #00a8cc; }
-        }
+        body { background-color: #f5f6f8; padding: 40px; display: flex; justify-content: center; font-family: sans-serif; }
+        .portal-container { background: #ffffff; width: 100%; max-width: 850px; border-radius: 24px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         
+        /* O EFEITO DE "CORRIDA" (O RAIO DE PERSPECTIVA) */
+        @keyframes efeito-corrida {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
         .video-container { 
             width: 100%; 
             aspect-ratio: 16 / 9; 
             border-radius: 16px; 
             overflow: hidden; 
-            animation: brilho-raio 2s infinite; 
-            margin-bottom: 20px;
+            margin: 20px 0;
+            animation: efeito-corrida 0.8s ease-out; /* O carro vindo na sua direção */
         }
     </style>
 </head>
 <body>
     <div class="portal-container">
-        <!-- Player com o efeito de raio -->
+        <!-- Logo de volta -->
+        <header style="text-align: center;">
+            <img src="logoaudiotype.png" alt="AudioType" style="max-width: 250px;">
+        </header>
+
+        <!-- Player com o efeito de aproximação -->
         <div class="video-container">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SUA_ID_AQUI" frameborder="0" allowfullscreen></iframe>
         </div>
-        
-        <textarea style="width: 100%; height: 150px; border-radius: 8px; padding: 10px;" placeholder="Digite aqui a transcrição..."></textarea>
+
+        <textarea style="width: 100%; height: 100px; border-radius: 8px; padding: 10px;" placeholder="Digite aqui a transcrição..."></textarea>
     </div>
 </body>
-</html>    
+</html>
