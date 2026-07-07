@@ -2,60 +2,36 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AudioType - O som que vira texto</title>
+    <title>AudioType - Treino</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
-        body { background-color: #f5f6f8; color: #333333; padding: 40px 20px; display: flex; justify-content: center; }
-        .portal-container { background: #ffffff; width: 100%; max-width: 850px; border-radius: 24px; padding: 40px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); }
-        
-        /* Menu e Seções */
-        .nav-menu { display: flex; justify-content: center; gap: 25px; margin-bottom: 30px; font-size: 13px; border-bottom: 1px solid #eef0f3; padding-bottom: 15px; }
-        .nav-menu a { text-decoration: none; color: #6c757d; font-weight: 600; text-transform: uppercase; }
-        .content-section { display: none; padding: 20px; background: #fafbfc; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #00a8cc; }
-        .content-section:target { display: block; }
+        body { background-color: #f5f6f8; padding: 40px; display: flex; justify-content: center; }
+        .portal-container { background: #ffffff; width: 100%; max-width: 850px; border-radius: 24px; padding: 40px; }
 
-        /* Estilo do Treino */
-        .treino-box { background: #0b1a30; color: #ffffff; padding: 30px; border-radius: 16px; margin-top: 20px; }
-        .textarea-treino { width: 100%; height: 100px; margin-top: 15px; border-radius: 8px; padding: 10px; border: none; }
-
-        /* Brilho estilo Raio (Anime Style) */
+        /* O EFEITO DE RAIO/BRILHO QUE VOCÊ GOSTA */
         @keyframes brilho-raio {
             0% { box-shadow: 0 0 10px #00a8cc; }
             50% { box-shadow: 0 0 25px #00a8cc, 0 0 40px #ffffff; }
             100% { box-shadow: 0 0 10px #00a8cc; }
         }
-        .main-banner { background: linear-gradient(135deg, #003366 0%, #00a8cc 100%); color: #ffffff; padding: 35px 25px; border-radius: 16px; margin-bottom: 25px; animation: brilho-raio 2s infinite; }
+        
+        .video-container { 
+            width: 100%; 
+            aspect-ratio: 16 / 9; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            animation: brilho-raio 2s infinite; 
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="portal-container">
-        <nav class="nav-menu">
-            <a href="#sobre">Sobre</a>
-            <a href="#proposito">Propósito</a>
-            <a href="#como-funciona">Como Funciona</a>
-        </nav>
-
-        <header style="text-align: center; margin-bottom: 30px;">
-            <img src="logoaudiotype.png" alt="AudioType" style="max-width: 250px;">
-        </header>
-
-        <section id="sobre" class="content-section"><h2>Sobre</h2><p>Treine sua agilidade auditiva aqui.</p></section>
-        <section id="proposito" class="content-section"><h2>Propósito</h2><p>Desenvolver taquígrafos digitais qualificados.</p></section>
-
-        <div class="main-banner">
-            <h2>Nível 1: Introdução à Transcrição</h2>
-            <p>Ouça o áudio e digite o que ouvir no campo abaixo.</p>
+        <!-- Player com o efeito de raio -->
+        <div class="video-container">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" frameborder="0" allowfullscreen></iframe>
         </div>
-
-        <div class="treino-box">
-            <h3>Áudio de Exemplo:</h3>
-            <audio controls style="width: 100%; margin-top: 10px;">
-                <source src="audio_teste.mp3" type="audio/mpeg">
-            </audio>
-            <textarea class="textarea-treino" placeholder="Comece a digitar aqui conforme escuta..."></textarea>
-            <button style="margin-top: 10px; padding: 10px 20px; cursor: pointer;">Validar Transcrição</button>
-        </div>
+        
+        <textarea style="width: 100%; height: 150px; border-radius: 8px; padding: 10px;" placeholder="Digite aqui a transcrição..."></textarea>
     </div>
 </body>
-</html>
+</html>    
