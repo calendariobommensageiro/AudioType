@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body { background-color: #0b0e14; padding: 40px; display: flex; justify-content: center; font-family: 'Segoe UI', sans-serif; color: #ffffff; }
-        .portal-container { background: #161b22; width: 100%; max-width: 850px; border-radius: 24px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid #30363d; }
-        
-        /* Ajuste do Header com o Logo */
-        header { display: flex; align-items: center; justify-content: center; margin-bottom: 30px; }
-        .logo-img { max-width: 200px; margin-right: 15px; }
-
-        .video-container { width: 100%; aspect-ratio: 9/16; max-width: 400px; margin: 20px auto; border-radius: 16px; overflow: hidden; background: #000; }
-        
-        .cta-box { background: #21262d; border-left: 4px solid #58a6ff; padding: 20px; border-radius: 8px; margin-top: 30px; }
-        .cta-title { color: #58a6ff; font-weight: bold; margin-bottom: 10px; }
-        
-        textarea { width: 100%; height: 120px; background: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 8px; padding: 15px; margin-top: 10px; font-size: 16px; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0b0e14; color: #fff; margin: 0; }
+        nav { display: flex; justify-content: space-between; padding: 20px 50px; align-items: center; border-bottom: 1px solid #30363d; }
+        .logo { font-size: 24px; font-weight: bold; color: #58a6ff; }
+        .hero { padding: 80px 20px; text-align: center; }
+        .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 50px; }
+        .box { background: #161b22; padding: 20px; border-radius: 12px; border: 1px solid #30363d; }
+        .app-section { padding: 50px; background: #0d1117; text-align: center; }
+        .video-player { width: 100%; max-width: 600px; aspect-ratio: 9/16; margin: 20px auto; border-radius: 16px; background: #000; }
+        .btn { background: #238636; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="portal-container">
-        <header>
-            <img src="logoaudiotype.png" alt="AudioType" class="logo-img">
-            <h1 style="font-size: 24px;">| Sistema de Treino</h1>
-        </header>
+    <nav>
+        <div class="logo">AudioType</div>
+        <div>Quem Somos | Propósito | Planos | <a href="#" style="color: #58a6ff;">Login</a></div>
+    </nav>
 
-        <div class="video-container">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SUA_URL_AQUI" frameborder="0" allowfullscreen></iframe>
+    <div class="hero">
+        <h1>Domine a Transcrição e Ganhe em Dólar</h1>
+        <p>Prepare-se para o mercado global com a plataforma que prioriza técnica e precisão.</p>
+        <br><br>
+        <a href="#treino" class="btn">COMEÇAR TREINAMENTO</a>
+    </div>
+
+    <div class="benefits">
+        <div class="box"><h3>☕ Flexibilidade</h3><p>Trabalhe quando e onde quiser. O seu tempo é o seu ativo.</p></div>
+        <div class="box"><h3>💻 Projetos Globais</h3><p>Acesso a demandas reais de empresas internacionais.</p></div>
+        <div class="box"><h3>💰 Receba em Dólar</h3><p>Segurança de pagamentos semanais via plataformas globais.</p></div>
+    </div>
+
+    <div id="treino" class="app-section">
+        <h2>Sistema de Treino Profissional</h2>
+        <div class="video-player">
+            <!-- Seu vídeo do OpusClip aqui -->
+            <iframe width="100%" height="100%" src="URL_DO_SEU_VIDEO_YT" frameborder="0" allowfullscreen></iframe>
         </div>
-
-        <textarea placeholder="Sua transcrição profissional começa aqui..."></textarea>
-
-        <div class="cta-box">
-            <div class="cta-title">TRANSFORME SEU TEMPO EM RENDA GLOBAL</div>
-            <p style="font-size: 14px; line-height: 1.6;">A transcrição profissional paga em dólar. Não é um jogo; é a sua qualificação para o mercado internacional. Treine precisão, desenvolva velocidade e prepare-se para demandas reais.</p>
-        </div>
+        <textarea style="width: 80%; height: 150px; border-radius: 8px; padding: 15px; margin: 20px 0;"></textarea>
     </div>
 </body>
 </html>
