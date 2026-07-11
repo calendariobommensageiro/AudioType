@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <title>Planos | AudioType</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #0b0e14; color: #fff; margin: 0; padding: 50px; }
-        .pricing-grid { display: flex; gap: 20px; }
-        .card { background: #161b22; padding: 20px; border-radius: 8px; border: 1px solid #30363d; width: 300px; }
+        body { font-family: sans-serif; background: #0a0a0a; color: white; text-align: center; padding: 50px; }
+        .pricing-container { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
+        .card { background: #161b22; padding: 30px; border-radius: 10px; border: 1px solid #30363d; width: 250px; }
+        .price { font-size: 2rem; font-weight: bold; margin: 20px 0; }
+        button { background: #238636; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
     </style>
 </head>
 <body>
-    <h1>Planos e Valores</h1>
-    <div class="pricing-grid">
+    <h1>Escolha seu plano e comece a lucrar</h1>
+    <div class="pricing-container">
         <div class="card">
-            <h3>Básico</h3>
-            <p>R$ 49/mês</p>
-            <p>Acesso aos módulos fundamentais.</p>
+            <h3>Mensal</h3>
+            <div class="price">R$ 9,90</div>
+            <button>Assinar</button>
         </div>
         <div class="card">
-            <h3>Profissional</h3>
-            <p>R$ 99/mês</p>
-            <p>Acesso total, mentorias e projetos exclusivos.</p>
+            <h3>Semestral</h3>
+            <div class="price">R$ 29,90</div>
+            <button>Assinar</button>
+        </div>
+        <div class="card">
+            <h3>Anual</h3>
+            <div class="price">R$ 49,90</div>
+            <button>Assinar</button>
         </div>
     </div>
-    <br>
-    <a href="index.html" style="color: #58a6ff;">Voltar para Home</a>
 </body>
 </html>
