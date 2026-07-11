@@ -2,31 +2,50 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>AudioType | Domine a Transcrição Profissional</title>
+    <title>AudioType | Domine a Transcrição</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #0b0e14; color: #fff; margin: 0; }
-        nav { display: flex; justify-content: space-between; padding: 20px 50px; align-items: center; border-bottom: 1px solid #30363d; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0b0e14; color: #fff; margin: 0; scroll-behavior: smooth; }
+        nav { display: flex; justify-content: space-between; padding: 20px 50px; align-items: center; border-bottom: 1px solid #30363d; position: sticky; top: 0; background: #0b0e14; }
         .logo { font-size: 28px; font-weight: bold; color: #58a6ff; }
         .menu a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 14px; }
-        .hero { padding: 80px 50px; text-align: center; }
-        .btn-cta { background: #238636; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+        section { padding: 100px 50px; min-height: 400px; border-bottom: 1px solid #30363d; }
+        h1 { font-size: 48px; }
+        .btn-cta { background: #238636; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
     </style>
 </head>
 <body>
     <nav>
         <div class="logo">AudioType</div>
         <div class="menu">
-            <a href="quem-somos.html">Quem Somos</a>
-            <a href="proposito.html">Propósito</a>
-            <a href="precos.html">Planos</a>
-            <a href="login.html" style="color: #58a6ff;">Login</a>
+            <a href="#quem-somos">Quem Somos</a>
+            <a href="#proposito">Propósito</a>
+            <a href="#precos">Planos</a>
+            <a href="#login" style="color: #58a6ff;">Login</a>
         </div>
     </nav>
-    <header class="hero">
+
+    <section id="home" style="text-align: center;">
         <h1>Domine a Transcrição Profissional</h1>
         <p>Acelere sua carreira com treinamentos curtos e focados.</p>
-        <br><br>
-        <a href="login.html" class="btn-cta">COMEÇAR TREINAMENTO</a>
-    </header>
+        <a href="#login" class="btn-cta">COMEÇAR TREINAMENTO</a>
+    </section>
+
+    <section id="quem-somos">
+        <h2>Quem Somos</h2>
+        <p>O AudioType é a plataforma de elite para transcritores que buscam excelência. Focamos na simulação real de demandas do mercado internacional, preparando você para a precisão e velocidade exigidas pelos grandes players do setor.</p>
+    </section>
+
+    <section id="proposito">
+        <h2>Nosso Propósito</h2>
+        <p>Capacitar o talento brasileiro para a economia digital global. Acreditamos que a transcrição profissional é uma porta de entrada para a independência financeira, desde que praticada com as ferramentas e metodologias corretas.</p>
+    </section>
+
+    <section id="precos">
+        <h2>Planos e Valores</h2>
+        <div style="display: flex; gap: 20px;">
+            <div style="background: #161b22; padding: 20px; border-radius: 8px;"><h3>Básico - R$ 49/mês</h3><p>Módulos fundamentais.</p></div>
+            <div style="background: #161b22; padding: 20px; border-radius: 8px;"><h3>Profissional - R$ 99/mês</h3><p>Acesso total e mentorias.</p></div>
+        </div>
+    </section>
 </body>
 </html>
