@@ -2,50 +2,41 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>AudioType | Domine a Transcrição</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioType | Excelência em Transcrição Profissional</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #0b0e14; color: #fff; margin: 0; scroll-behavior: smooth; }
-        nav { display: flex; justify-content: space-between; padding: 20px 50px; align-items: center; border-bottom: 1px solid #30363d; position: sticky; top: 0; background: #0b0e14; }
-        .logo { font-size: 28px; font-weight: bold; color: #58a6ff; }
-        .menu a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 14px; }
-        section { padding: 100px 50px; min-height: 400px; border-bottom: 1px solid #30363d; }
-        h1 { font-size: 48px; }
-        .btn-cta { background: #238636; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
+        :root { --primary: #007bff; --dark: #0a0a0a; --text: #e1e1e1; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark); color: var(--text); margin: 0; line-height: 1.6; }
+        
+        /* Cabeçalho Premium */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid #222; }
+        .logo-nav { height: 40px; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 30px; font-weight: 500; font-size: 0.9rem; transition: opacity 0.2s; }
+        .nav-links a:hover { opacity: 0.7; }
+        .btn-login { border: 1px solid #fff; padding: 8px 20px; border-radius: 4px; }
+
+        /* Hero Section - Estilo Rev */
+        .hero { padding: 120px 8%; text-align: left; max-width: 900px; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { font-size: 1.25rem; color: #a1a1a1; margin-bottom: 40px; }
+        .cta-btn { background: var(--primary); color: white; padding: 16px 32px; border-radius: 6px; font-weight: 600; text-decoration: none; }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">AudioType</div>
-        <div class="menu">
-            <a href="#quem-somos">Quem Somos</a>
-            <a href="#proposito">Propósito</a>
-            <a href="#precos">Planos</a>
-            <a href="#login" style="color: #58a6ff;">Login</a>
-        </div>
-    </nav>
+    <header>
+        <img src="logoaudiotype.png" class="logo-nav" alt="AudioType">
+        <nav class="nav-links">
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="proposito.html">Propósito</a>
+            <a href="precos.html">Planos</a>
+            <a href="login.html" class="btn-login">Login</a>
+        </nav>
+    </header>
 
-    <section id="home" style="text-align: center;">
-        <h1>Domine a Transcrição Profissional</h1>
-        <p>Acelere sua carreira com treinamentos curtos e focados.</p>
-        <a href="#login" class="btn-cta">COMEÇAR TREINAMENTO</a>
-    </section>
-
-    <section id="quem-somos">
-        <h2>Quem Somos</h2>
-        <p>O AudioType é a plataforma de elite para transcritores que buscam excelência. Focamos na simulação real de demandas do mercado internacional, preparando você para a precisão e velocidade exigidas pelos grandes players do setor.</p>
-    </section>
-
-    <section id="proposito">
-        <h2>Nosso Propósito</h2>
-        <p>Capacitar o talento brasileiro para a economia digital global. Acreditamos que a transcrição profissional é uma porta de entrada para a independência financeira, desde que praticada com as ferramentas e metodologias corretas.</p>
-    </section>
-
-    <section id="precos">
-        <h2>Planos e Valores</h2>
-        <div style="display: flex; gap: 20px;">
-            <div style="background: #161b22; padding: 20px; border-radius: 8px;"><h3>Básico - R$ 49/mês</h3><p>Módulos fundamentais.</p></div>
-            <div style="background: #161b22; padding: 20px; border-radius: 8px;"><h3>Profissional - R$ 99/mês</h3><p>Acesso total e mentorias.</p></div>
-        </div>
+    <section class="hero">
+        <h1>Transforme áudio em precisão.</h1>
+        <p>A plataforma definitiva para profissionais que dominam a transcrição e buscam alta rentabilidade no mercado global.</p>
+        <a href="login.html" class="cta-btn">Começar Agora</a>
     </section>
 </body>
 </html>
