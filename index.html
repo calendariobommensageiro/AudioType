@@ -2,41 +2,36 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AudioType | Excelência em Transcrição Profissional</title>
+    <title>AudioType | Área de Treino Profissional</title>
     <style>
-        :root { --primary: #007bff; --dark: #0a0a0a; --text: #e1e1e1; }
-        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark); color: var(--text); margin: 0; line-height: 1.6; }
-        
-        /* Cabeçalho Premium */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid #222; }
-        .logo-nav { height: 40px; }
-        .nav-links a { color: #fff; text-decoration: none; margin-left: 30px; font-weight: 500; font-size: 0.9rem; transition: opacity 0.2s; }
-        .nav-links a:hover { opacity: 0.7; }
-        .btn-login { border: 1px solid #fff; padding: 8px 20px; border-radius: 4px; }
-
-        /* Hero Section - Estilo Rev */
-        .hero { padding: 120px 8%; text-align: left; max-width: 900px; }
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
-        .hero p { font-size: 1.25rem; color: #a1a1a1; margin-bottom: 40px; }
-        .cta-btn { background: var(--primary); color: white; padding: 16px 32px; border-radius: 6px; font-weight: 600; text-decoration: none; }
+        body { margin: 0; font-family: sans-serif; background: #0b0e14; color: #fff; display: flex; flex-direction: column; height: 100vh; }
+        header { padding: 15px 30px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
+        .main-container { display: flex; flex: 1; padding: 20px; gap: 20px; }
+        .work-area { flex: 3; display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { flex: 1; background: #161b22; border: 1px solid #30363d; display: flex; justify-content: center; align-items: center; min-height: 300px; }
+        textarea { flex: 1; background: #0b0e14; color: #fff; border: 1px solid #30363d; padding: 20px; font-size: 16px; border-radius: 8px; }
+        .player-box { background: #161b22; padding: 20px; border-radius: 8px; text-align: center; }
+        .btn-submit { background: #238636; color: #fff; border: none; padding: 15px; border-radius: 6px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
     <header>
-        <img src="logoaudiotype.png" class="logo-nav" alt="AudioType">
-        <nav class="nav-links">
-            <a href="quem-somos.html">Quem Somos</a>
-            <a href="proposito.html">Propósito</a>
-            <a href="precos.html">Planos</a>
-            <a href="login.html" class="btn-login">Login</a>
-        </nav>
+        <div style="font-size: 24px; font-weight: bold; color: #58a6ff;">AudioType</div>
+        <div><a href="index.html" style="color: #fff; text-decoration: none;">Sair do Treino</a></div>
     </header>
 
-    <section class="hero">
-        <h1>Transforme áudio em precisão.</h1>
-        <p>A plataforma definitiva para profissionais que dominam a transcrição e buscam alta rentabilidade no mercado global.</p>
-        <a href="login.html" class="cta-btn">Começar Agora</a>
-    </section>
+    <div class="main-container">
+        <div class="work-area">
+            <div class="player-box">
+                <p>Áudio de Treino #01</p>
+                <audio controls style="width: 100%; max-width: 500px;"></audio>
+            </div>
+            <textarea placeholder="Digite a transcrição aqui..."></textarea>
+            <button class="btn-submit">ENVIAR E VERIFICAR</button>
+        </div>
+        <div class="sidebar">
+            <p style="color: #8b949e;">Espaço para Anúncios</p>
+        </div>
+    </div>
 </body>
 </html>
