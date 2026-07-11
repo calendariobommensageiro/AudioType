@@ -2,44 +2,85 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioType | Domine a Transcrição</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #0b0e14; color: #fff; margin: 0; }
-        nav { display: flex; justify-content: space-between; padding: 20px 50px; align-items: center; border-bottom: 1px solid #30363d; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0b0e14; color: #fff; line-height: 1.6; }
+        
+        /* Navbar */
+        nav { display: flex; justify-content: space-between; padding: 20px 50px; align-items: center; border-bottom: 1px solid #30363d; background: #0b0e14; position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 24px; font-weight: bold; color: #58a6ff; }
-        .hero { padding: 80px 20px; text-align: center; }
-        .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 50px; }
-        .box { background: #161b22; padding: 20px; border-radius: 12px; border: 1px solid #30363d; }
-        .app-section { padding: 50px; background: #0d1117; text-align: center; }
-        .video-player { width: 100%; max-width: 600px; aspect-ratio: 9/16; margin: 20px auto; border-radius: 16px; background: #000; }
-        .btn { background: #238636; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+        .menu-links a { color: #ffffff; text-decoration: none; margin-left: 25px; font-size: 14px; transition: color 0.3s; }
+        .menu-links a:hover { color: #58a6ff; }
+        .btn-login { color: #58a6ff !important; font-weight: bold; }
+
+        /* Hero */
+        .hero { padding: 100px 20px; text-align: center; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; }
+        .btn-cta { background: #238636; color: white; padding: 18px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 30px; }
+
+        /* Content Sections */
+        .section { padding: 80px 50px; max-width: 1000px; margin: auto; }
+        .section h2 { margin-bottom: 30px; text-align: center; }
+        
+        /* Benefits Grid */
+        .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .box { background: #161b22; padding: 30px; border-radius: 12px; border: 1px solid #30363d; text-align: center; }
+        
+        /* Training */
+        .app-section { background: #0d1117; padding: 80px 20px; text-align: center; }
+        .video-player { width: 100%; max-width: 450px; aspect-ratio: 9/16; margin: 20px auto; border-radius: 16px; background: #000; overflow: hidden; }
+        textarea { width: 100%; max-width: 600px; height: 150px; background: #161b22; color: #c9d1d9; border: 1px solid #30363d; border-radius: 8px; padding: 15px; margin-top: 20px; font-size: 16px; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #30363d; font-size: 14px; color: #8b949e; }
     </style>
 </head>
 <body>
+
     <nav>
         <div class="logo">AudioType</div>
-        <div>Quem Somos | Propósito | Planos | <a href="#" style="color: #58a6ff;">Login</a></div>
+        <div class="menu-links">
+            <a href="#quem-somos">Quem Somos</a>
+            <a href="#proposito">Propósito</a>
+            <a href="#planos">Planos</a>
+            <a href="login.html" class="btn-login">Login</a>
+        </div>
     </nav>
 
-    <div class="hero">
-        <h1>Domine a Transcrição e Ganhe em Dólar</h1>
-        <p>Prepare-se para o mercado global com a plataforma que prioriza técnica e precisão.</p>
-        <br><br>
-        <a href="#treino" class="btn">COMEÇAR TREINAMENTO</a>
+    <header class="hero">
+        <h1>Domine a Transcrição Profissional e Ganhe em Dólar</h1>
+        <p>A plataforma definitiva para desenvolver a velocidade e a precisão necessárias para atuar nos maiores mercados de transcrição do mundo.</p>
+        <a href="#treino" class="btn-cta">COMEÇAR TREINAMENTO</a>
+    </header>
+
+    <div class="section" id="quem-somos">
+        <h2>Quem Somos</h2>
+        <p>O AudioType nasceu da necessidade de preparar profissionais brasileiros para o mercado de trabalho remoto global. Não somos um joguinho de digitação; somos um ambiente de simulação profissional.</p>
     </div>
 
-    <div class="benefits">
-        <div class="box"><h3>☕ Flexibilidade</h3><p>Trabalhe quando e onde quiser. O seu tempo é o seu ativo.</p></div>
-        <div class="box"><h3>💻 Projetos Globais</h3><p>Acesso a demandas reais de empresas internacionais.</p></div>
-        <div class="box"><h3>💰 Receba em Dólar</h3><p>Segurança de pagamentos semanais via plataformas globais.</p></div>
-    </div>
-
-    <div id="treino" class="app-section">
-        <h2>Sistema de Treino Profissional</h2>
-        <div class="video-player">
-            <!-- Seu vídeo do OpusClip aqui -->
-            <iframe width="100%" height="100%" src="URL_DO_SEU_VIDEO_YT" frameborder="0" allowfullscreen></iframe>
+    <div class="section" id="beneficios">
+        <div class="benefits">
+            <div class="box"><h3>☕ Flexibilidade</h3><p>Trabalhe quando e onde quiser. O seu tempo é o seu ativo.</p></div>
+            <div class="box"><h3>💻 Projetos Globais</h3><p>Acesso a demandas reais de empresas internacionais.</p></div>
+            <div class="box"><h3>💰 Receba em Dólar</h3><p>Segurança de pagamentos semanais via plataformas globais.</p></div>
         </div>
-        <textarea style="width: 80%; height: 150px; border-radius: 8px; padding: 15px; margin: 20px 0;"></textarea>
     </div>
+
+    <div class="app-section" id="treino">
+        <h2>Sistema de Treino</h2>
+        <div class="video-player">
+            <!-- Substitua URL_DO_VIDEO pela ID correta do seu vídeo -->
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/d1yfb93beSI" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <textarea placeholder="Sua transcrição profissional começa aqui..."></textarea>
+    </div>
+
+    <footer id="proposito">
+        <p><strong>Propósito:</strong> Transformar talentos brasileiros em profissionais capacitados para a economia digital global.</p>
+        <br>
+        <p>&copy; 2026 AudioType. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>
