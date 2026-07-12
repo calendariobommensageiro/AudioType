@@ -5,8 +5,13 @@
     <title>AudioType | Área de Treino Profissional</title>
     <style>
         body { margin: 0; font-family: sans-serif; background: #0b0e14; color: #fff; display: flex; flex-direction: column; height: 100vh; }
-header { padding: 10px 30px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
-header img { height: 100px; width: auto; cursor: pointer; } /* Esta linha define o tamanho da logo */        .main-container { display: flex; flex: 1; padding: 20px; gap: 20px; }
+        
+        header { padding: 10px 30px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Regra única para controlar o tamanho da logo */
+        header img { height: 100px; width: auto; cursor: pointer; } 
+        
+        .main-container { display: flex; flex: 1; padding: 20px; gap: 20px; }
         .work-area { flex: 3; display: flex; flex-direction: column; gap: 20px; }
         .sidebar { flex: 1; background: #161b22; border: 1px solid #30363d; display: flex; justify-content: center; align-items: center; min-height: 300px; }
         textarea { flex: 1; background: #0b0e14; color: #fff; border: 1px solid #30363d; padding: 20px; font-size: 16px; border-radius: 8px; }
@@ -17,7 +22,7 @@ header img { height: 100px; width: auto; cursor: pointer; } /* Esta linha define
 <body>
     <header>
         <a href="index.html">
-            <img src="logoaudiotype.png" alt="Logo AudioType" style="height: 50px; cursor: pointer;">
+            <img src="logoaudiotype.png" alt="Logo AudioType">
         </a>
         <div><a href="index.html" style="color: #fff; text-decoration: none;">Sair do Treino</a></div>
     </header>
